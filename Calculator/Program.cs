@@ -36,8 +36,15 @@ namespace Calculator
                 
                 var calculator = new ConsoleCalculatorCreator().CreateCalculator();
                 var op = (Operation)choose;
-                calculator.Calculate(firstValue, secondValue, op);
-                calculator.ShowResult();
+                try
+                {
+                    calculator.Calculate(firstValue, secondValue, op);
+                    calculator.ShowResult();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
             }
             
         }
